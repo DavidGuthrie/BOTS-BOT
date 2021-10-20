@@ -361,7 +361,6 @@ def get_coingecko_info():
     'market_cap'   : response.json()['market_data']['market_cap']['usd'],
     'volume_24h'   : response.json()['market_data']['total_volume']['usd'],
     'cg_rank'      : response.json()['market_data']['market_cap_rank'],
-    'etherscan'    : response.json()['platforms']['ethereum'],
     'bscsan'       : response.json()['platforms']['binance-smart-chain'],
     'github'       : response.json()['links']['repos_url']['github'][0]
     }
