@@ -33,8 +33,8 @@ async def on_ready():
 
     if message.content.startswith('+help'):
 
-      embed=discord.Embed(title=f"Help Commands", description="List of help commands, all start with a + example: +joke", color=0x6ba4ff)
-      embed.set_author(name="Encrypto", icon_url="https://media.discordapp.net/attachments/502855038788698137/502855445111898123/cisla-light-blue.png")
+      embed=discord.Embed(title=f"Help Commands", description="List of help commands, all start with a + example: +joke", color=0xFFFF00)
+      embed.set_author(name="Encrypto", icon_url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
       embed.add_field(name="welcome", value="Welcome help text", inline=True)
       embed.add_field(name="joke", value="Joke repository", inline=True)
       embed.add_field(name="cislaprice", value="Crypto Islands's current price via CoinGecko", inline=True)
@@ -55,7 +55,7 @@ async def on_ready():
     if message.content.startswith('+cislaprice'):
       cisla_info = get_coingecko_info()
 
-      embed=discord.Embed(title= cisla_info['name'], description="Some useful info about cisla (source: CoinGecko)", color=0x6ba4ff)
+      embed=discord.Embed(title= cisla_info['name'], description="Some useful info about cisla (source: CoinGecko)", color=0xFFFF00)
       embed.set_author(name="Encrypto", icon_url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
       #Current Price
       embed.add_field(name="Current Fiat Price", value= 
@@ -97,7 +97,7 @@ async def on_ready():
     # Moderation  
 
     for i in range(0,len(message.author.roles)):
-      if message.author.roles[i].name == 'ENTER ROLE NAME':
+      if message.author.roles[i].name == 'Cisla':
         if msg.lower().startswith('cooldown'):
           if len(message.mentions) != 0 and len(message.mentions) < 2:
             await message.channel.send('Uh oh! Someone has been bad! 😪')
@@ -110,7 +110,7 @@ async def on_ready():
       channel_id = message.channel.id
       msg_id = message.id
       link = 'https://discordapp.com/channels/' + str(server_id) + '/' + str(channel_id) + '/' + str(msg_id)
-      channel = client.get_channel(ADD CHANNEL)
+      channel = client.get_channel(900379211984957441)
       await channel.send(f"{message.author.mention} Report Spam {link}") 
    
     #Error catch example 
@@ -133,7 +133,7 @@ async def on_ready():
       # Commands
       #'+level' : "<https://atlasbot.xyz/leaderboard/442113968681648128>",
       '+whitepaper' : "<http://www.cryptoisland.com/wp-content/uploads/2021/09/Whitepaper_CISLA_V2.2.pdf>",
-      '+docs' : "<>",
+      # '+docs' : "<>",
       '+tasks' : "CoinMarketCap - <https://coinmarketcap.com/currencies/crypto-island/> - Scroll Down To “How Do You Feel About Crypto Island Today?” **Vote Good**\nCoinGecko - <https://www.coingecko.com/en/coins/crypto-island> - Scroll Down To “How Do You Feel About Crypto Island Today?” **Vote Good**\nGoogle - Search <https://www.google.com/search?q=crypto+island&rlz=1C1CHBF_enGB855GB855&oq=crypto+island&aqs=chrome..69i57j0i20i263i512j0i512l3j69i60j69i61j69i60.4511j0j7&sourceid=chrome&ie=UTF-8> **Click Crypto Island Link**\nCrypto Island Youtube channel: <https://www.youtube.com/channel/UC-GPUKqnlJC6Ws2GE0FVJNg> **Like, Watch & Comment**\nTwitter - Posts from <https://twitter.com/CryptoIslandInc> **Like, Retweet & Comment**\nDextools - <https://www.dextools.io/app/bsc> **Add to watchlist & vote good**", 
       '+roadmap' : "<https://www.cryptoisland.com/#Roadmap>",     
       '+chart' : "<https://poocoin.app/tokens/0x09d975c3351dbded28617517fc6982284a787f03>",
@@ -212,7 +212,7 @@ async def on_ready():
   @client.command(aliases=['Ban','BAN'])
   @commands.has_permissions(ban_members=True)
   async def ban(ctx, member : discord.Member, *, reason=None):
-    channel = client.get_channel(ADD CHANNEL)
+    channel = client.get_channel(900379211984957441)
     await member.ban(reason=reason)
     await channel.send(f"{member.mention} has been banned.")
 
@@ -291,7 +291,7 @@ async def _rps(ctx):
 async def cooldown(member, message):
   role = discord.utils.get(member.guild.roles, name="COOLDOWN")
   await member.add_roles(role)
-  await message.channel.send('<@' + str(member.id) + '> needs to cooldown for a bit in <#ADD CHANNEL>!')
+  await message.channel.send('<@' + str(member.id) + '> needs to cooldown for a bit in <#900379211984957441!')
   
   await timing()
 
