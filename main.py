@@ -35,7 +35,7 @@ async def on_ready():
 
       embed=discord.Embed(title=f"Help Commands", description="List of help commands, all start with a + example: +joke", color=0xFFFF00)
       embed.set_author(name="Encrypto", icon_url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
-      embed.add_field(name="welcome", value="Welcome help text", inline=True)
+      # embed.add_field(name="welcome", value="Welcome help text", inline=True) Need to develop welcome text
       embed.add_field(name="joke", value="Joke repository", inline=True)
       embed.add_field(name="cislaprice", value="Crypto Islands's current price via CoinGecko", inline=True)
       embed.add_field(name="chart", value="Crypto Islands's chart", inline=True)
@@ -45,17 +45,17 @@ async def on_ready():
       embed.add_field(name="contract", value="contract details for Crypto Island", inline=True)
       embed.add_field(name="treasury", value="Treasury wallet address", inline=True)
       embed.add_field(name="random", value="Random facts", inline=True)
-      embed.add_field(name="8ball & Question", value="Ask a question to the 8ball, 8ball Will cisla reach $300", inline=True)
+      embed.add_field(name="8ball & Question", value="Ask a question to the 8ball, 8ball Will $CISLA reach $50", inline=True)
       embed.add_field(name="rps", value="Let's have a game of Rock, Paper or Scissors", inline=True)
       
       embed.set_thumbnail(url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
-      embed.set_footer(text="$Cisla4Lyfe   |   Enter Web Address")
+      embed.set_footer(text="$Cisla4Lyfe   |   https://cryptoisland.group/   |   https://cryptoisland.shop/")
       await message.channel.send(embed=embed)
 
     if message.content.startswith('+cislaprice'):
       cisla_info = get_coingecko_info()
 
-      embed=discord.Embed(title= cisla_info['name'], description="Some useful info about cisla (source: CoinGecko)", color=0xFFFF00)
+      embed=discord.Embed(title= cisla_info['name'], description="Some useful info about $CISLA (source: CoinGecko)", color=0xFFFF00)
       embed.set_author(name="Encrypto", icon_url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
       #Current Price
       embed.add_field(name="Current Fiat Price", value= 
@@ -71,10 +71,10 @@ async def on_ready():
 
       #Price change
       embed.add_field(name="Price Change ($)", value= 
-      "24h: " + "{:.3%}".format(cisla_info['price_24h']/100) + "\n" + 
-      "7d:  " + "{:.3%}".format(cisla_info['price_7d']/100) + "\n" + 
-      "14d: " + "{:.3%}".format(cisla_info['price_14d']/100) + "\n" + 
-      "30d: " + "{:.3%}".format(cisla_info['price_30d']/100), inline=True)
+      "24h: " + "{:.7%}".format(cisla_info['price_24h']/100) + "\n" + 
+      "7d:  " + "{:.7%}".format(cisla_info['price_7d']/100) + "\n" + 
+      "14d: " + "{:.7%}".format(cisla_info['price_14d']/100) + "\n" + 
+      "30d: " + "{:.7%}".format(cisla_info['price_30d']/100), inline=True)
     
       #Market cap / volume
       #embed.add_field(name="Current Marketcap", value= "${:,.2f}".format(cisla_info['market_cap']), inline=True)
@@ -97,7 +97,7 @@ async def on_ready():
     # Moderation  
 
     for i in range(0,len(message.author.roles)):
-      if message.author.roles[i].name == 'Cisla':
+      if message.author.roles[i].name == 'CISMA':
         if msg.lower().startswith('cooldown'):
           if len(message.mentions) != 0 and len(message.mentions) < 2:
             await message.channel.send('Uh oh! Someone has been bad! 😪')
@@ -176,12 +176,12 @@ async def on_ready():
           
     # Custom Animated Emoji Based Listeners
 
-    # elif msg.startswith('<a:customemoji>'):
+    # elif msg.startswith('<a:cisla>'):
     #   await message.channel.send('Text')  
 
     # Custom Static Emoji Based Listeners
       
-    elif msg.startswith('<:CISLA EMOJI>'):
+    elif msg.startswith('<a:cisla>'):
       await message.channel.send('CISLA to $50!')
       await asyncio.sleep(1)
       await message.channel.send('NFA 😂')
@@ -291,7 +291,7 @@ async def _rps(ctx):
 async def cooldown(member, message):
   role = discord.utils.get(member.guild.roles, name="COOLDOWN")
   await member.add_roles(role)
-  await message.channel.send('<@' + str(member.id) + '> needs to cooldown for a bit in <#900379211984957441!')
+  await message.channel.send('<@' + str(member.id) + '> needs to cooldown for a bit in <#900670630230364190!')
   
   await timing()
 
@@ -362,7 +362,6 @@ def get_coingecko_info():
     'volume_24h'   : response.json()['market_data']['total_volume']['usd'],
     'cg_rank'      : response.json()['market_data']['market_cap_rank'],
     'bscsan'       : response.json()['platforms']['binance-smart-chain'],
-    'github'       : response.json()['links']['repos_url']['github'][0]
     }
     return cisla_inf
 
