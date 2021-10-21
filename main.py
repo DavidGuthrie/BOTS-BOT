@@ -59,22 +59,22 @@ async def on_ready():
       embed.set_author(name="Encrypto", icon_url="https://www.cryptoisland.com/wp-content/uploads//2021/06/Logo.svg")
       #Current Price
       embed.add_field(name="Current Fiat Price", value= 
-      "${:,.2f}".format(cisla_info['cur_price_usd']) + "\n" + 
-      "€{:,.2f}".format(cisla_info['cur_price_eur']) + "\n" + 
-      "£{:,.2f}".format(cisla_info['cur_price_gbp']) + "\n" + 
-      "₩{:,.2f}".format(cisla_info['cur_price_krw']), inline=True)
+      "${:,.7f}".format(cisla_info['cur_price_usd']) + "\n" + 
+      "€{:,.7f}".format(cisla_info['cur_price_eur']) + "\n" + 
+      "£{:,.7f}".format(cisla_info['cur_price_gbp']) + "\n" + 
+      "₩{:,.7f}".format(cisla_info['cur_price_krw']), inline=True)
 
-      embed.add_field(name="Current Price", value= 
-      "{:,.7f} BTC".format(cisla_info['cur_price_btc']) + "\n" + 
-      "{:,.7f} ETH".format(cisla_info['cur_price_eth']) + "\n" + 
-      "{:,.7f} BNB".format(cisla_info['cur_price_bnb']), inline=True)
+      # embed.add_field(name="Current Price", value= 
+      # "{:,.7f} BTC".format(cisla_info['cur_price_btc']) + "\n" + 
+      # "{:,.7f} ETH".format(cisla_info['cur_price_eth']) + "\n" + 
+      # "{:,.7f} BNB".format(cisla_info['cur_price_bnb']), inline=True)
 
       #Price change
       embed.add_field(name="Price Change ($)", value= 
-      "24h: " + "{:.7%}".format(cisla_info['price_24h']/100) + "\n" + 
-      "7d:  " + "{:.7%}".format(cisla_info['price_7d']/100) + "\n" + 
-      "14d: " + "{:.7%}".format(cisla_info['price_14d']/100) + "\n" + 
-      "30d: " + "{:.7%}".format(cisla_info['price_30d']/100), inline=True)
+      "24h: " + "{:.3%}".format(cisla_info['price_24h']/100) + "\n" + 
+      "7d:  " + "{:.3%}".format(cisla_info['price_7d']/100) + "\n" + 
+      "14d: " + "{:.3%}".format(cisla_info['price_14d']/100) + "\n" + 
+      "30d: " + "{:.3%}".format(cisla_info['price_30d']/100), inline=True)
     
       #Market cap / volume
       #embed.add_field(name="Current Marketcap", value= "${:,.2f}".format(cisla_info['market_cap']), inline=True)
@@ -97,7 +97,7 @@ async def on_ready():
     # Moderation  
 
     for i in range(0,len(message.author.roles)):
-      if message.author.roles[i].name == 'CISMA':
+      if message.author.roles[i].name == 'COOLDOWN':
         if msg.lower().startswith('cooldown'):
           if len(message.mentions) != 0 and len(message.mentions) < 2:
             await message.channel.send('Uh oh! Someone has been bad! 😪')
