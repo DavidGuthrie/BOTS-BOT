@@ -1,28 +1,13 @@
 [tool.poetry]
-name = "repl_python3_beta_CISLA-BOT"
+name = "repl_python3_BOTS-BOT"
 version = "0.1.0"
 description = ""
 authors = ["MrEncrypto <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+yahoo-fin = "^0.8.9"
 discord = "^1.7.3"
-discord2 = "^2.0.1"
-discord-lib = "^0.0.5"
-"discord.py" = "^1.7.3"
-discord-interactive = "^4.0"
-Justify-discord = "^1.0"
-discord-config = "^0.0.2"
-notify-discord = "^0.1"
-discord-logging = "^1.0"
-discord-webhook = "^0.15.0"
-"discord.js" = "^1.0.7"
-discord-wallet = "^0.3"
-discord-kartrider = "^1.0.6"
-discord-db = "^0.1.0"
-discord-rpc = "^3.0"
-discord-handler = "^0.0.3"
-discord-cli = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 
