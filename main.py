@@ -291,7 +291,7 @@ async def on_ready():
       embed.add_field(name="Type/Amount" + "\n\n\u200b", value= "Normal/25" +  "\n\n\u200b" + "Grass/5" +  "\n\n\u200b" + "Grass/5"  +  "\n\n\u200b" + "Normal/3", inline=True)
       embed.add_field(name="Ailment/Enhancement" + "\n\n\u200b", value= "Boost" +  "\n\n\u200b" + "Sleepy" +  "\n\n\u200b" + "Diseased"  +  "\n\n\u200b" + "Boost", inline=True)
       embed.add_field(name="\n\n\u200b", value= "\n\n\u200b", inline=True)
-      embed.set_thumbnail(url="https://uploads-ssl.webflow.com/61b7ef3f6e1160ab79341eda/61bd415273f587612e7574dd_13255-min.png")
+      embed.set_thumbnail(url="https://uploads-ssl.webflow.com/61b7ef3f6e1160ab79341eda/61bd415260b8ae6674a64790_13257-min.png")
       embed.set_footer(text="$mnstrs4Lyfe   |   http://blockmonsters.co ")
       await message.channel.send(embed=embed) 
 
