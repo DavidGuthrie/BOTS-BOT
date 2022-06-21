@@ -522,6 +522,9 @@ async def on_ready():
       
     elif msg.startswith('hang'): 
       await message.add_reaction('😈')
+      
+    elif msg.startswith('drey'): 
+      await message.add_reaction('<a:commanderrank:988837728273694730>')
        
     # Custom Animated Emoji Based Listeners
 
@@ -530,7 +533,7 @@ async def on_ready():
 
     # Custom Static Emoji Based Listeners
       
-    elif msg.startswith('<a:mnstrloading>'): #change emoji
+    elif msg.startswith('<a:mnstrloading:936206170392260619>'): #change emoji
       await message.channel.send('mnstrs to $1!')
       await asyncio.sleep(1)
       await message.channel.send('NFA 😂')
